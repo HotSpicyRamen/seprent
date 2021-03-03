@@ -1,0 +1,7 @@
+//?? 	Specifies the base URL/target for all relative URLs in a document
+@mixin srp_appearance_reset_base() {
+}
+
+@if ($srp_appearance_reset_base) {
+  @include srp_appearance_reset_base();
+}

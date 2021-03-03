@@ -1,0 +1,7 @@
+//??  Defines content aside from the page content
+@mixin srp_appearance_reset_aside() {
+}
+
+@if ($srp_appearance_reset_aside) {
+  @include srp_appearance_reset_aside();
+}

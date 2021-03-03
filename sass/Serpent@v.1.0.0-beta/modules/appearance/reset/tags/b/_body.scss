@@ -1,0 +1,7 @@
+//?? Defines the document's body
+@mixin srp_appearance_reset_body() {
+}
+
+@if ($srp_appearance_reset_body) {
+  @include srp_appearance_reset_body();
+}

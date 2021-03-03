@@ -1,0 +1,7 @@
+//?? 	Defines a ruby annotation (for East Asian typography)
+@mixin srp_appearance_reset_ruby() {
+}
+
+@if ($srp_appearance_reset_ruby) {
+  @include srp_appearance_reset_ruby();
+}

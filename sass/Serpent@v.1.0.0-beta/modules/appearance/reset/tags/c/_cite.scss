@@ -1,0 +1,7 @@
+//?? Defines the title of a work
+@mixin srp_appearance_reset_cite() {
+}
+
+@if ($srp_appearance_reset_cite) {
+  @include srp_appearance_reset_cite();
+}

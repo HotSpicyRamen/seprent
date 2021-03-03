@@ -1,0 +1,7 @@
+//?? 	Defines an explanation/pronunciation of characters (for East Asian typography)
+@mixin srp_appearance_reset_rt() {
+}
+
+@if ($srp_appearance_reset_rt) {
+  @include srp_appearance_reset_rt();
+}

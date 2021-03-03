@@ -1,0 +1,7 @@
+//?? Isolates a part of text that might be formatted in a different direction from other text outside it
+@mixin srp_appearance_reset_bdi() {
+}
+
+@if ($srp_appearance_reset_bdi) {
+  @include srp_appearance_reset_bdi();
+}

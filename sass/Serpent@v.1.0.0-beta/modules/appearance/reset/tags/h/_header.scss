@@ -1,0 +1,7 @@
+//?? 	Defines a header for a document or section
+@mixin srp_appearance_reset_header() {
+}
+
+@if ($srp_appearance_reset_header) {
+  @include srp_appearance_reset_header();
+}

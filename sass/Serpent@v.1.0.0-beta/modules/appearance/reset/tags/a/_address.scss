@@ -1,0 +1,7 @@
+//?? Defines contact information for the author/owner of a document
+@mixin srp_appearance_reset_address() {
+}
+
+@if ($srp_appearance_reset_address) {
+  @include srp_appearance_reset_address();
+}

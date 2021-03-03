@@ -1,0 +1,7 @@
+//?? 	Defines an image
+@mixin srp_appearance_reset_img() {
+}
+
+@if ($srp_appearance_reset_img) {
+  @include srp_appearance_reset_img();
+}

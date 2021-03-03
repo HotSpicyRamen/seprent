@@ -1,0 +1,36 @@
+@if ($srp_module_scrollbar) {
+  .scrollbar,
+  .swipe {
+    overflow: auto;
+  }
+
+  .scrollbar-x,
+  .swipe-x {
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .scrollbar-y,
+  .swipe-y {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .scrollbar,
+  .scrollbar-x,
+  .scrollbar-y {
+    white-space: nowrap;
+    @include srp_scrollbar();
+    @include srp_scrollbar_button();
+    @include srp_scrollbar_thumb();
+    @include srp_scrollbar_track();
+    @include srp_scrollbar_corner();
+  }
+
+  .swipe,
+  .swipe-x,
+  .swipe-y {
+    white-space: nowrap;
+    @include srp_scrollbar_hide();
+  }
+}

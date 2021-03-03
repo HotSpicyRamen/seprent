@@ -1,0 +1,7 @@
+//?? Defines a table caption
+@mixin srp_appearance_reset_caption() {
+}
+
+@if ($srp_appearance_reset_caption) {
+  @include srp_appearance_reset_caption();
+}

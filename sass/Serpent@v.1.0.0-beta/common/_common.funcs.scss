@@ -1,0 +1,111 @@
+@function srp-is-map($variable) {
+  @return type-of($variable) == "map";
+}
+
+@function srp-trim($string) {
+  $whitespace: " ";
+
+  //** Trim Start
+  @if (str-slice($string, 1, 1) == $whitespace) {
+    $string: str-slice($string, 2);
+    @return srp-trim($string);
+  }
+
+  //** Trim End
+  @if (str-slice($string, str-length($string), -1) == $whitespace) {
+    $string: str-slice($string, 1, -2);
+    @return srp-trim($string);
+  }
+
+  @return $string;
+}
+
+@function srp-split($string, $separator) {
+  $array: ();
+  $separator-index: str-index($string, $separator);
+
+  @while $separator-index != null {
+    $substring: str-slice($string, 1, $separator-index - 1);
+    $array: append($array, #{$substring});
+    $string: str-slice($string, $separator-index + 1);
+    $separator-index: str-index($string, $separator);
+  }
+
+  $array: append($array, #{$string});
+
+  @return $array;
+}
+
+@function srp-replace($string, $search, $replace) {
+  $match: str-index($string, $search);
+  $search-length: str-length($search);
+
+  @if $match {
+    $result: str-slice($string, 1, $match - 1) + $replace;
+    $rest: str-slice($string, $match + $search-length);
+    @return $result + srp-replace($rest, $search, $replace);
+  }
+
+  @return $string;
+}
+
+//** Adds last element to array
+@function srp-push($array, $item) {
+  @return append($array, #{$item});
+}
+
+//** Removes last element of array
+@function srp-pop($array) {
+  $new-array: ();
+
+  @for $index from 1 through length($array) - 1 {
+    $item: nth($array, $index);
+    $new-array: append($new-array, #{$item});
+  }
+
+  @return $new-array;
+}
+
+//** Adds first element to array
+@function srp-unshift($array, $item) {
+  @return join((#{$item}), $array);
+}
+
+//** Removes first element of array
+@function srp-shift($array) {
+  $new-array: ();
+
+  @for $index from 2 through length($array) {
+    $item: nth($array, $index);
+    $new-array: append($new-array, #{$item});
+  }
+
+  @return $new-array;
+}
+
+//** Sets new object property
+@function srp-set-map-key($object, $prop-key, $prop-value) {
+  @if (map-has-key($object, $prop-key)) {
+    @error "Property [ #{$prop-key} ] already exists";
+  }
+
+  @return map-merge($object, (#{$prop-key}: $prop-value));
+}
+
+// $str: "this-is-string";
+// $arr: (1 2 3 4 5);
+// $obj: (
+//   name: "Roman",
+//   age: 21,
+//   status: "Student",
+// );
+
+// @debug srp-split($str, "/");
+// @debug srp-split($str, "-");
+// @debug srp-trim(" Trimmed Font name  ");
+// @debug srp-replace("Something Else", "e", "[]");
+
+// @debug srp-shift($arr);
+// @debug srp-pop($arr);
+// @debug srp-arr-add-first($arr, 100);
+// @debug srp-arr-add-last($arr, 100);

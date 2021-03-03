@@ -1,0 +1,7 @@
+//?? 	Defines embedded video content
+@mixin srp_appearance_reset_video() {
+}
+
+@if ($srp_appearance_reset_video) {
+  @include srp_appearance_reset_video();
+}

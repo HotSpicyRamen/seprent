@@ -1,0 +1,7 @@
+//?? 	Specifies self-contained content
+@mixin srp_appearance_reset_figure() {
+}
+
+@if ($srp_appearance_reset_figure) {
+  @include srp_appearance_reset_figure();
+}

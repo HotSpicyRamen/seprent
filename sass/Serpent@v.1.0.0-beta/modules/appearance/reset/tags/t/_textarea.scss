@@ -1,0 +1,7 @@
+//?? 	Defines a multiline input control (text area)
+@mixin srp_appearance_reset_textarea() {
+}
+
+@if ($srp_appearance_reset_textarea) {
+  @include srp_appearance_reset_textarea();
+}

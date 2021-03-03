@@ -1,0 +1,7 @@
+//?? Defines additional details that the user can view or hide
+@mixin srp_appearance_reset_details() {
+}
+
+@if ($srp_appearance_reset_details) {
+  @include srp_appearance_reset_details();
+}

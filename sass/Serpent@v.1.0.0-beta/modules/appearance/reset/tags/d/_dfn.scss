@@ -1,0 +1,7 @@
+//?? Specifies a term that is going to be defined within the content
+@mixin srp_appearance_reset_dfn() {
+}
+
+@if ($srp_appearance_reset_dfn) {
+  @include srp_appearance_reset_dfn();
+}

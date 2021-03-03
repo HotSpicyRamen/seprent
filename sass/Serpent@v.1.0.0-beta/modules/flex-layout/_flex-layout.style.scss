@@ -1,0 +1,14 @@
+@if ($srp_module_flex-layout) {
+  .row-box {
+    overflow: hidden;
+  }
+
+  .row {
+    @include srp_flex-layout_initialize-row();
+    > * {
+      @include srp_flex-layout_initialize-col();
+    }
+  }
+
+  @include srp_flex-layout_initialize();
+}

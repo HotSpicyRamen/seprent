@@ -1,0 +1,7 @@
+//?? 	Contains metadata/information for the document
+@mixin srp_appearance_reset_head() {
+}
+
+@if ($srp_appearance_reset_head) {
+  @include srp_appearance_reset_head();
+}

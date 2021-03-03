@@ -1,0 +1,7 @@
+//?? 	Defines navigation links
+@mixin srp_appearance_reset_nav() {
+}
+
+@if ($srp_appearance_reset_nav) {
+  @include srp_appearance_reset_nav();
+}

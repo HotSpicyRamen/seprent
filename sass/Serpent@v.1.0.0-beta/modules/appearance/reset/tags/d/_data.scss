@@ -1,0 +1,7 @@
+//?? Adds a machine-readable translation of a given content
+@mixin srp_appearance_reset_data() {
+}
+
+@if ($srp_appearance_reset_data) {
+  @include srp_appearance_reset_data();
+}

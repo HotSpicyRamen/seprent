@@ -1,0 +1,7 @@
+//?? 	Defines an image map
+@mixin srp_appearance_reset_map() {
+}
+
+@if ($srp_appearance_reset_map) {
+  @include srp_appearance_reset_map();
+}

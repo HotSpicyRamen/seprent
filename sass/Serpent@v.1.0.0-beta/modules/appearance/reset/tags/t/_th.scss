@@ -1,0 +1,7 @@
+//?? 	Defines a header cell in a table
+@mixin srp_appearance_reset_th() {
+}
+
+@if ($srp_appearance_reset_th) {
+  @include srp_appearance_reset_th();
+}

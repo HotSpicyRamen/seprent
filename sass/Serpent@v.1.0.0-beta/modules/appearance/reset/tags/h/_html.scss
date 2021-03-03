@@ -1,0 +1,7 @@
+//?? 	Defines the root of an HTML document
+@mixin srp_appearance_reset_html() {
+}
+
+@if ($srp_appearance_reset_html) {
+  @include srp_appearance_reset_html();
+}

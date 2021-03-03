@@ -1,0 +1,7 @@
+//?? 	Defines metadata about an HTML document
+@mixin srp_appearance_reset_meta() {
+}
+
+@if ($srp_appearance_reset_meta) {
+  @include srp_appearance_reset_meta();
+}

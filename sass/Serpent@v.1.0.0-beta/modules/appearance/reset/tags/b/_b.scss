@@ -1,0 +1,7 @@
+//?? Defines bold text
+@mixin srp_appearance_reset_b() {
+}
+
+@if ($srp_appearance_reset_b) {
+  @include srp_appearance_reset_b();
+}

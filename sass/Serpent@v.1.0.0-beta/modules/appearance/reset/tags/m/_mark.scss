@@ -1,0 +1,7 @@
+//?? 	Defines marked/highlighted text
+@mixin srp_appearance_reset_mark() {
+}
+
+@if ($srp_appearance_reset_mark) {
+  @include srp_appearance_reset_mark();
+}

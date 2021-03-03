@@ -1,0 +1,7 @@
+//?? 	Groups the header content in a table
+@mixin srp_appearance_reset_thead() {
+}
+
+@if ($srp_appearance_reset_thead) {
+  @include srp_appearance_reset_thead();
+}

@@ -1,0 +1,7 @@
+//?? 	Defines an option in a drop-down list
+@mixin srp_appearance_reset_option() {
+}
+
+@if ($srp_appearance_reset_option) {
+  @include srp_appearance_reset_option();
+}

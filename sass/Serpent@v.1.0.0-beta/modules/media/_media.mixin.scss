@@ -1,0 +1,106 @@
+//!!  @mixin srp-media-min-width($name, $breakpoints)
+//??  Media of at least the minimum breakpoint width.
+//**  No query for the smallest breakpoint.
+//**  Makes the @content apply to the given breakpoint and wider.
+//>>  srp-media-min-width(xs, $breakpoints) === @content
+//>>  srp-media-min-width(xxl, $breakpoints) === @media (min-width: 1400px) { @content }
+@mixin srp-media-min-width($name, $breakpoints) {
+  $min: srp-breakpoint-min($name, $breakpoints);
+
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+//!!  @mixin srp-media-max-width($name, $breakpoints)
+//??  Media of at most the maximum breakpoint width.
+//**  No query for the largest breakpoint.
+//**  Makes the @content apply to the given breakpoint and narrower.
+//>>  srp-media-max-width(xs, $breakpoints) === @content
+//>>  srp-media-max-width(xxl, $breakpoints) === @media (max-width: 1399.98px) { @content }
+@mixin srp-media-max-width($name, $breakpoints) {
+  $max: srp-breakpoint-max($name, $breakpoints);
+
+  @if $max {
+    @media (max-width: $max) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+//!!  @mixin srp-media-area-width($lower, $upper, $breakpoints)
+//??  Media that spans multiple breakpoint widths.
+//**  Makes the @content apply between the min and max breakpoints.
+//>>  srp-media-area-width(xs, md, $breakpoints) === @media (max-width: 767.98px) { @content }
+//>>  srp-media-area-width(md, xxl, $breakpoints) === @media (min-width: 768px) and (max-width: 1399.98px) { @content }
+@mixin srp-media-area-width($lower, $upper, $breakpoints) {
+  $min: srp-breakpoint-min($lower, $breakpoints);
+  $max: srp-breakpoint-max($upper, $breakpoints);
+
+  @if $min != null and $max != null {
+    @media (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  } @else if $max == null {
+    @include srp-media-min-width($lower, $breakpoints) {
+      @content;
+    }
+  } @else if $min == null {
+    @include srp-media-max-width($upper, $breakpoints) {
+      @content;
+    }
+  }
+}
+
+//!!  @mixin srp-media-boundary-width($name, $breakpoints)
+//??  Media for boundary values of the breakpoint.
+//**  No minimum for the smallest breakpoint, and no maximum for the largest one.
+//**  Makes the @content apply only to the given breakpoint, not viewports any wider or narrower.
+//>>  srp-media-boundary-width(md) === srp-media-area-width(md, lg)
+@mixin srp-media-boundary-width($name, $breakpoints) {
+  $min: srp-breakpoint-min($name, $breakpoints);
+  $next-name: srp-breakpoint-next($name, $breakpoints);
+  $max: srp-breakpoint-max($next-name, $breakpoints);
+
+  @include srp-media-area-width($min, $max, $breakpoints) {
+    @content;
+  }
+}
+
+//!!!! Additional classes
+@mixin srp-set-xs-content($name: xs, $breakpoints: $srp_media_breakpoints) {
+  @include srp-media-min-width($name, $breakpoints) {
+    @content;
+  }
+}
+@mixin srp-set-sm-content($name: sm, $breakpoints: $srp_media_breakpoints) {
+  @include srp-media-min-width($name, $breakpoints) {
+    @content;
+  }
+}
+@mixin srp-set-md-content($name: md, $breakpoints: $srp_media_breakpoints) {
+  @include srp-media-min-width($name, $breakpoints) {
+    @content;
+  }
+}
+@mixin srp-set-lg-content($name: lg, $breakpoints: $srp_media_breakpoints) {
+  @include srp-media-min-width($name, $breakpoints) {
+    @content;
+  }
+}
+@mixin srp-set-xl-content($name: xl, $breakpoints: $srp_media_breakpoints) {
+  @include srp-media-min-width($name, $breakpoints) {
+    @content;
+  }
+}
+@mixin srp-set-xxl-content($name: xxl, $breakpoints: $srp_media_breakpoints) {
+  @include srp-media-min-width($name, $breakpoints) {
+    @content;
+  }
+}

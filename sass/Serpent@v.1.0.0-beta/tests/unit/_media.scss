@@ -1,0 +1,38 @@
+@mixin srp_test_unit_media($breakpoints) {
+  .srp-breakpoint-debug {
+    color: #ec9347;
+    font-size: 1.2rem;
+    line-height: 1.2rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    background: #2d2d2d;
+    padding: 1rem 2rem;
+    border-top: 10px solid white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @each $name in map-keys($breakpoints) {
+    $limits: srp-breakpoint-limits($name, $breakpoints);
+    $lower: nth($limits, 1);
+    $upper: nth($limits, 2);
+    $range: if($upper, "#{$lower} - #{$upper}", "> #{$lower}");
+
+    @include srp-media-min-width($name, $breakpoints) {
+      .srp-breakpoint-debug {
+        &::before {
+          content: "Breakpoint: #{$name}";
+        }
+        &::after {
+          content: "Range: #{$range}";
+        }
+      }
+    }
+  }
+}

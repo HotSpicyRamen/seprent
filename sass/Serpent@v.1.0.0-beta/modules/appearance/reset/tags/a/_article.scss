@@ -1,0 +1,7 @@
+//?? Defines an article
+@mixin srp_appearance_reset_article() {
+}
+
+@if ($srp_appearance_reset_article) {
+  @include srp_appearance_reset_article();
+}

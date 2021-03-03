@@ -1,0 +1,7 @@
+//?? 	Groups the body content in a table
+@mixin srp_appearance_reset_tbody() {
+}
+
+@if ($srp_appearance_reset_tbody) {
+  @include srp_appearance_reset_tbody();
+}

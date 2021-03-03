@@ -1,0 +1,7 @@
+//?? 	Defines a possible line-break
+@mixin srp_appearance_reset_wbr() {
+}
+
+@if ($srp_appearance_reset_wbr) {
+  @include srp_appearance_reset_wbr();
+}

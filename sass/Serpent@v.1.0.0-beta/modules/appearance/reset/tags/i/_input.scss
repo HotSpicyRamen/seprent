@@ -1,0 +1,30 @@
+@mixin srp_appearance_reset_input_focus {
+  //** Removes the stupid outer glow in Webkit
+  input:focus {
+    outline: none;
+  }
+}
+
+@mixin srp_appearance_reset_input_type_number {
+  //** Removes arrows of input[type="number"]
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  //** Removes Firefox arrows of input[type="number"]
+  input[type="number"] {
+    -moz-appearance: textfield;
+  }
+}
+
+//?? Defines an input control
+@mixin srp_appearance_reset_input() {
+  @include srp_appearance_reset_input_focus();
+
+  @include srp_appearance_reset_input_type_number();
+}
+
+@if ($srp_appearance_reset_input) {
+  @include srp_appearance_reset_input();
+}

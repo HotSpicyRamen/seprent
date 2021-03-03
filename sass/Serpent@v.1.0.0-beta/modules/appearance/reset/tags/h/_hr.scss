@@ -1,0 +1,7 @@
+//?? 	Defines a thematic change in the content
+@mixin srp_appearance_reset_hr() {
+}
+
+@if ($srp_appearance_reset_hr) {
+  @include srp_appearance_reset_hr();
+}

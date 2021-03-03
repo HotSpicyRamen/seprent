@@ -1,0 +1,7 @@
+//?? 	Defines the result of a calculation
+@mixin srp_appearance_reset_output() {
+}
+
+@if ($srp_appearance_reset_output) {
+  @include srp_appearance_reset_output();
+}

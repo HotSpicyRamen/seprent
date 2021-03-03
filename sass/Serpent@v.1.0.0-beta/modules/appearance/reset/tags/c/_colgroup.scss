@@ -1,0 +1,7 @@
+//?? Specifies a group of one or more columns in a table for formatting
+@mixin srp_appearance_reset_colgroup() {
+}
+
+@if ($srp_appearance_reset_colgroup) {
+  @include srp_appearance_reset_colgroup();
+}

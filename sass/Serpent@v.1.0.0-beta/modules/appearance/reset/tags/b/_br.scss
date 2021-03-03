@@ -1,0 +1,7 @@
+//?? Defines a single line break
+@mixin srp_appearance_reset_br() {
+}
+
+@if ($srp_appearance_reset_br) {
+  @include srp_appearance_reset_br();
+}

@@ -1,0 +1,7 @@
+//?? 	Defines an inline frame
+@mixin srp_appearance_reset_iframe() {
+}
+
+@if ($srp_appearance_reset_iframe) {
+  @include srp_appearance_reset_iframe();
+}

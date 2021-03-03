@@ -1,0 +1,7 @@
+//?? 	Defines superscripted text
+@mixin srp_appearance_reset_sup() {
+}
+
+@if ($srp_appearance_reset_sup) {
+  @include srp_appearance_reset_sup();
+}

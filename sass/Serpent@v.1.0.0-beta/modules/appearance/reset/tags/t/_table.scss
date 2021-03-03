@@ -1,0 +1,7 @@
+//?? 	Defines a table
+@mixin srp_appearance_reset_table() {
+}
+
+@if ($srp_appearance_reset_table) {
+  @include srp_appearance_reset_table();
+}

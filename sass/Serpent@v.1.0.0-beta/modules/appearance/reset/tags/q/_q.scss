@@ -1,0 +1,7 @@
+//?? 	Defines a short quotation
+@mixin srp_appearance_reset_q() {
+}
+
+@if ($srp_appearance_reset_q) {
+  @include srp_appearance_reset_q();
+}

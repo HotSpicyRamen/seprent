@@ -1,0 +1,7 @@
+//?? 	Defines a group of related options in a drop-down list
+@mixin srp_appearance_reset_optgroup() {
+}
+
+@if ($srp_appearance_reset_optgroup) {
+  @include srp_appearance_reset_optgroup();
+}

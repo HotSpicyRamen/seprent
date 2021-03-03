@@ -1,0 +1,33 @@
+@mixin srp_gap_initialize($breakpoints: $srp_media_breakpoints) {
+  @each $name in map-keys($breakpoints) {
+    $postfix: srp-breakpoint-postfix($name, $breakpoints);
+
+    @include srp-media-min-width($name, $breakpoints) {
+      @if ($srp_gap_build_flex-layout) {
+        @each $index, $size in $srp_gap_flex-layout {
+          .row-gap#{$postfix}-#{$index},
+          .row-gap-x#{$postfix}-#{$index} {
+            --row-gap-x: #{$size};
+          }
+
+          .row-gap#{$postfix}-#{$index},
+          .row-gap-y#{$postfix}-#{$index} {
+            --row-gap-y: #{$size};
+          }
+        }
+      }
+
+      @if ($srp_gap_build_list) {
+        @each $index, $size in $srp_gap_list {
+          .list-gap-x#{$postfix}-#{$index} > *:not(:first-child) {
+            margin-left: $size;
+          }
+
+          .list-gap-y#{$postfix}-#{$index} > *:not(:first-child) {
+            margin-top: $size;
+          }
+        }
+      }
+    }
+  }
+}

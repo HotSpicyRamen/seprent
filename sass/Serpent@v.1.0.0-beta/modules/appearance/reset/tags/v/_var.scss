@@ -1,0 +1,7 @@
+//?? 	Defines a variable
+@mixin srp_appearance_reset_var() {
+}
+
+@if ($srp_appearance_reset_var) {
+  @include srp_appearance_reset_var();
+}

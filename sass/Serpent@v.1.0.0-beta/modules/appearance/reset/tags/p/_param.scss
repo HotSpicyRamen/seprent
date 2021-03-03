@@ -1,0 +1,7 @@
+//?? 	Defines a parameter for an object
+@mixin srp_appearance_reset_param() {
+}
+
+@if ($srp_appearance_reset_param) {
+  @include srp_appearance_reset_param();
+}

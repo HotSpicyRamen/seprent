@@ -1,0 +1,17 @@
+@if ($srp_module_utilities) {
+  @include srp_utilities_initialize();
+
+  .flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .hidden {
+    visibility: hidden;
+  }
+
+  .visible {
+    visibility: visible;
+  }
+}

@@ -1,0 +1,7 @@
+//?? Defines a section that is quoted from another source
+@mixin srp_appearance_reset_blockquote() {
+}
+
+@if ($srp_appearance_reset_blockquote) {
+  @include srp_appearance_reset_blockquote();
+}

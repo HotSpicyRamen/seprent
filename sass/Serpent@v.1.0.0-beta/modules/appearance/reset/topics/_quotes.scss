@@ -1,0 +1,17 @@
+@mixin srp_appearance_reset_blockquote {
+  //** Resets blockquote appearance
+  blockquote,
+  q {
+    quotes: none;
+
+    &::before,
+    &::after {
+      content: "";
+      content: none;
+    }
+  }
+}
+
+@if ($srp_appearance_reset_blockquote) {
+  @include srp_appearance_reset_blockquote();
+}

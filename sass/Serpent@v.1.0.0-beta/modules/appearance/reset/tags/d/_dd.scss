@@ -1,0 +1,7 @@
+//?? Defines a description/value of a term in a description list
+@mixin srp_appearance_reset_dd() {
+}
+
+@if ($srp_appearance_reset_dd) {
+  @include srp_appearance_reset_dd();
+}

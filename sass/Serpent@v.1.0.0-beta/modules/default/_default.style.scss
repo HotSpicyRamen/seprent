@@ -1,0 +1,3 @@
+@if ($srp_module_default) {
+  @include srp_default_initialize();
+}

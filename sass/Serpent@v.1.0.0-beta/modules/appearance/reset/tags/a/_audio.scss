@@ -1,0 +1,10 @@
+//?? Defines embedded sound content
+@mixin srp_appearance_reset_audio() {
+  audio:focus {
+    outline: none;
+  }
+}
+
+@if ($srp_appearance_reset_audio) {
+  @include srp_appearance_reset_audio();
+}

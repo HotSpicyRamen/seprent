@@ -1,0 +1,7 @@
+//?? 	Defines style information for a document
+@mixin srp_appearance_reset_style() {
+}
+
+@if ($srp_appearance_reset_style) {
+  @include srp_appearance_reset_style();
+}

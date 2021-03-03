@@ -1,0 +1,26 @@
+@if ($srp_module_normalize) {
+  @if ($srp_normalize_build_common) {
+    @include srp_normalize_common();
+  }
+  @if ($srp_normalize_build_sections) {
+    @include srp_normalize_sections();
+  }
+  @if ($srp_normalize_build_grouping-content) {
+    @include srp_normalize_grouping-content();
+  }
+  @if ($srp_normalize_build_text-level-semantics) {
+    @include srp_normalize_text-level-semantics();
+  }
+  @if ($srp_normalize_build_embedded-content) {
+    @include srp_normalize_embedded-content();
+  }
+  @if ($srp_normalize_build_forms) {
+    @include srp_normalize_forms();
+  }
+  @if ($srp_normalize_build_interactive) {
+    @include srp_normalize_interactive();
+  }
+  @if ($srp_normalize_build_mics) {
+    @include srp_normalize_mics();
+  }
+}

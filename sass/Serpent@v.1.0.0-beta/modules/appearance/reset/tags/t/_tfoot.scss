@@ -1,0 +1,7 @@
+//?? 	Groups the footer content in a table
+@mixin srp_appearance_reset_tfoot() {
+}
+
+@if ($srp_appearance_reset_tfoot) {
+  @include srp_appearance_reset_tfoot();
+}

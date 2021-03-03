@@ -1,0 +1,7 @@
+//?? 	Defines a scalar measurement within a known range (a gauge)
+@mixin srp_appearance_reset_meter() {
+}
+
+@if ($srp_appearance_reset_meter) {
+  @include srp_appearance_reset_meter();
+}

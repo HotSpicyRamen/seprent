@@ -1,0 +1,7 @@
+//?? 	Defines keyboard input
+@mixin srp_appearance_reset_kbd() {
+}
+
+@if ($srp_appearance_reset_kbd) {
+  @include srp_appearance_reset_kbd();
+}

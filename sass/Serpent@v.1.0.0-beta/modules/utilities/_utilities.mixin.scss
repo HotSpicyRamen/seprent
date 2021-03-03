@@ -1,0 +1,63 @@
+@mixin srp_utilities_initialize($breakpoints: $srp_media_breakpoints) {
+  //** Loop over all breakpoint names
+  @each $breakpoint-name in map-keys($breakpoints) {
+    $postfix: srp-breakpoint-postfix($breakpoint-name, $breakpoints);
+    //** Set each media breakpoint
+    @include srp-media-min-width($breakpoint-name, $breakpoints) {
+      //** Loop over each utilility
+      @each $util-name, $util-data in $srp_utilities_map {
+        //** If utility does not have a name, then throw an error.
+        @if not $util-name {
+          @error "Utility name [ #{$util-name} ] is undefined";
+          @error "Set name for [ #{$util-data} ]";
+        }
+
+        //** Set class name by order: `property-base`, `property`.
+        //** If doesn't have a match, then use utility name as fallback.
+        $class: srp-parse-util-class($util-data, $util-name);
+
+        //** Transforms values for class naming.
+        $class-modes: srp-parse-util-class-modes($util-data);
+
+        //** Set new object properties
+        $util-data: srp-set-map-key($util-data, class, $class);
+        $util-data: srp-set-map-key($util-data, class-modes, $class-modes);
+
+        //** Utility media
+        $has-media: map-get($util-data, media);
+
+        //** If util with media
+        @if $has-media {
+          @include srp_utilities_create($util-data, $postfix);
+        } @else {
+          //** If util without media and empty postfix.
+          @if $postfix == "" {
+            @include srp_utilities_create($util-data, $postfix);
+          }
+        }
+      }
+    }
+  }
+}
+
+@mixin srp_utilities_create($data, $postfix) {
+  $class: map-get($data, class);
+  $class-modes: map-get($data, class-modes);
+
+  $css-property: map-get($data, property);
+  $css-values: map-get($data, values);
+
+  @if (srp-is-map($class-modes)) {
+    $css-values: map-values($class-modes);
+    $class-modes: map-keys($class-modes);
+  }
+
+  @for $index from 1 through length($css-values) {
+    $class-mode: nth($class-modes, $index);
+    $css-value: nth($css-values, $index);
+
+    .#{$class}#{$postfix}-#{$class-mode} {
+      #{$css-property}: $css-value !important;
+    }
+  }
+}

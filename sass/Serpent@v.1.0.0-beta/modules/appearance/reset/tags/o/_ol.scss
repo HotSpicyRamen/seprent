@@ -1,0 +1,7 @@
+//?? 	Defines an ordered list
+@mixin srp_appearance_reset_ol() {
+}
+
+@if ($srp_appearance_reset_ol) {
+  @include srp_appearance_reset_ol();
+}

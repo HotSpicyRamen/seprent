@@ -1,0 +1,7 @@
+//?? Overrides the current text direction
+@mixin srp_appearance_reset_bdo() {
+}
+
+@if ($srp_appearance_reset_bdo) {
+  @include srp_appearance_reset_bdo();
+}

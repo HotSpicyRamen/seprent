@@ -1,0 +1,7 @@
+//?? 	Defines a visible heading for a <details> element
+@mixin srp_appearance_reset_summary() {
+}
+
+@if ($srp_appearance_reset_summary) {
+  @include srp_appearance_reset_summary();
+}

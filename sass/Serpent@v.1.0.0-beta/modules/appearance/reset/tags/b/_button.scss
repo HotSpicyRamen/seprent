@@ -1,0 +1,7 @@
+//?? Defines a clickable button
+@mixin srp_appearance_reset_button() {
+}
+
+@if ($srp_appearance_reset_button) {
+  @include srp_appearance_reset_button();
+}

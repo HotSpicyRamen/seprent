@@ -1,0 +1,7 @@
+//?? 	Defines a footer for a document or section
+@mixin srp_appearance_reset_footer() {
+}
+
+@if ($srp_appearance_reset_footer) {
+  @include srp_appearance_reset_footer();
+}

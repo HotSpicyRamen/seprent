@@ -1,0 +1,7 @@
+//?? 	Defines important text
+@mixin srp_appearance_reset_strong() {
+}
+
+@if ($srp_appearance_reset_strong) {
+  @include srp_appearance_reset_strong();
+}

@@ -1,0 +1,7 @@
+//?? 	Represents the progress of a task
+@mixin srp_appearance_reset_progress() {
+}
+
+@if ($srp_appearance_reset_progress) {
+  @include srp_appearance_reset_progress();
+}

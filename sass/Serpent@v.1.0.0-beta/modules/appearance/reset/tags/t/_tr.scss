@@ -1,0 +1,7 @@
+//?? 	Defines a row in a table
+@mixin srp_appearance_reset_tr() {
+}
+
+@if ($srp_appearance_reset_tr) {
+  @include srp_appearance_reset_tr();
+}

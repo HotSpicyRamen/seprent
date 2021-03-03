@@ -1,0 +1,7 @@
+//?? Defines text that has been deleted from a document
+@mixin srp_appearance_reset_del() {
+}
+
+@if ($srp_appearance_reset_del) {
+  @include srp_appearance_reset_del();
+}

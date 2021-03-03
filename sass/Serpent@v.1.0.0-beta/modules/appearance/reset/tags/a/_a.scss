@@ -1,0 +1,7 @@
+//?? Defines a hyperlink
+@mixin srp_appearance_reset_a() {
+}
+
+@if ($srp_appearance_reset_a) {
+  @include srp_appearance_reset_a();
+}

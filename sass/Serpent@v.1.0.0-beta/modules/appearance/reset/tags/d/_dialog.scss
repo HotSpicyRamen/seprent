@@ -1,0 +1,7 @@
+//?? Defines a dialog box or window
+@mixin srp_appearance_reset_dialog() {
+}
+
+@if ($srp_appearance_reset_dialog) {
+  @include srp_appearance_reset_dialog();
+}

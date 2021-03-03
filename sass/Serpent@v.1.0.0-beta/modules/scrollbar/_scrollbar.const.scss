@@ -1,0 +1,21 @@
+$srp_scrollbar_width: 12px;
+$srp_scrollbar_height: 12px;
+$srp_scrollbar_background: red;
+
+$srp_scrollbar_button_width: $srp_scrollbar_width;
+$srp_scrollbar_button_height: $srp_scrollbar_height;
+$srp_scrollbar_button_background: blue;
+
+$srp_scrollbar_thumb_background: green;
+$srp_scrollbar_thumb_background_hover: darken(green, 10%);
+$srp_scrollbar_thumb_background_active: darken(green, 20%);
+$srp_scrollbar_thumb_border: 2px solid white;
+$srp_scrollbar_thumb_border-radius: 1000rem;
+
+$srp_scrollbar_track_background: lightgreen;
+$srp_scrollbar_track_background_hover: darken(lightgreen, 10%);
+$srp_scrollbar_track_background_active: darken(lightgreen, 20%);
+$srp_scrollbar_track_border: 2px solid black;
+$srp_scrollbar_track_border-radius: 1000rem;
+
+$srp_scrollbar_corner_background: rgb(0, 255, 255);

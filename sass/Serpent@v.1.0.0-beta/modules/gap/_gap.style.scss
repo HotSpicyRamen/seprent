@@ -1,0 +1,3 @@
+@if ($srp_module_gap) {
+  @include srp_gap_initialize();
+}

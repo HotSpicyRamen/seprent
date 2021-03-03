@@ -1,0 +1,7 @@
+//?? Defines a piece of computer code
+@mixin srp_appearance_reset_code() {
+}
+
+@if ($srp_appearance_reset_code) {
+  @include srp_appearance_reset_code();
+}

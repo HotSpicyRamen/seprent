@@ -1,0 +1,7 @@
+//?? Defines an abbreviation or an acronym
+@mixin srp_appearance_reset_abbr() {
+}
+
+@if ($srp_appearance_reset_abbr) {
+  @include srp_appearance_reset_abbr();
+}

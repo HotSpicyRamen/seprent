@@ -1,0 +1,118 @@
+@mixin srp_flex-layout_initialize-row() {
+  // --row-gap-x: 0;
+  // --row-gap-y: 0;
+  display: flex;
+  flex-wrap: wrap;
+  margin: calc(var(--row-gap-y) / -2) calc(var(--row-gap-x) / -2);
+}
+@mixin srp_flex-layout_initialize-col() {
+  padding: calc(var(--row-gap-y) / 2) calc(var(--row-gap-x) / 2);
+
+  //** Prevent columns from becoming too narrow when at smaller grid tiers by always setting `width: 100%;`. This works because we set the width later on to override this initial width.
+  flex-shrink: 0;
+  width: 100%;
+
+  //** Prevent .col-auto, .col from breaking out the grid.
+  max-width: 100%;
+}
+
+@mixin srp_flex-layout_make-row-cols($count) {
+  > * {
+    flex: 0 0 auto;
+    width: 100% / $count;
+  }
+}
+
+@mixin srp_flex-layout_make-col($size, $columns) {
+  flex: 0 0 auto;
+  width: percentage($size / $columns);
+}
+@mixin srp_flex-layout_make-col-auto() {
+  flex: 0 0 auto;
+  width: auto;
+}
+@mixin srp_flex-layout_make-col-offset($size, $columns) {
+  $offset: $size / $columns;
+  margin-left: if($offset == 0, 0, percentage($offset));
+}
+@mixin srp_flex-layout_make-col-square() {
+  display: flex;
+  &::before {
+    content: "";
+    padding-top: 100%;
+  }
+}
+
+@mixin srp_flex-layout_initialize(
+  $columns: $srp_flex-layout_size,
+  $breakpoints: $srp_media_breakpoints
+) {
+  @each $name in map-keys($breakpoints) {
+    $postfix: srp-breakpoint-postfix($name, $breakpoints);
+
+    @include srp-media-min-width($name, $breakpoints) {
+      @if ($srp_flex-layout_build_col) {
+        //** When breakpoint triggered, then width of the ONE .col, equal to width of .row
+        .col#{$postfix} {
+          flex: 1 0 0%;
+        }
+      }
+
+      @if ($srp_flex-layout_build_col-auto) {
+        //** When breakpoint triggered, then width of the ONE .col, equal to width of .col inside content
+        .col#{$postfix}-auto {
+          @include srp_flex-layout_make-col-auto();
+        }
+      }
+      @if ($srp_flex-layout_build_col-square) {
+        //** When breakpoint triggered, then height of the ONE .col, equal to width of itself
+        .col#{$postfix}-square {
+          @include srp_flex-layout_make-col-square();
+        }
+      }
+
+      @if ($srp_flex-layout_build_row-cols-auto) {
+        //** When breakpoint triggered, then width of the ALL .col, equal to width of .col inside content
+        .row-cols#{$postfix}-auto > * {
+          @include srp_flex-layout_make-col-auto();
+        }
+      }
+      @if ($srp_flex-layout_build_row-cols-square) {
+        //** When breakpoint triggered, then height of the ALL .col, equal to width of itself
+        .row-cols#{$postfix}-square > * {
+          @include srp_flex-layout_make-col-square();
+        }
+      }
+
+      @if $columns > 0 {
+        @if ($srp_flex-layout_build_col-size) {
+          @for $size from 1 through $columns {
+            .col#{$postfix}-#{$size} {
+              @include srp_flex-layout_make-col($size, $columns);
+            }
+          }
+        }
+
+        @if ($srp_flex-layout_build_row-cols-size) {
+          @for $size from 1 through $columns {
+            .row-cols#{$postfix}-#{$size} {
+              @include srp_flex-layout_make-row-cols($size);
+            }
+          }
+        }
+
+        @if ($srp_flex-layout_build_offset) {
+          //** [$columns - 1] (because offset-12 on width of entire row isn't possible)
+          @for $step from 0 through ($columns - 1) {
+            //** [$fix !== "" && $step !== 0] (offset-0 is useless)
+            @if not($postfix == "" and $step == 0) {
+              .offset#{$postfix}-#{$step} {
+                @include srp_flex-layout_make-col-offset($step, $columns);
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

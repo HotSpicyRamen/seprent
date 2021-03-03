@@ -1,0 +1,81 @@
+@mixin srp_scrollbar_hide() {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scrollbar-color: transparent;
+
+  &::-webkit-scrollbar {
+    display: none;
+    width: 0px;
+    background: transparent;
+  }
+}
+
+@mixin srp_scrollbar(
+  $width: $srp_scrollbar_width,
+  $height: $srp_scrollbar_height,
+  $background: $srp_scrollbar_background
+) {
+  &::-webkit-scrollbar {
+    width: $width;
+    height: $height;
+    background: $background;
+  }
+}
+
+@mixin srp_scrollbar_button(
+  $width: $srp_scrollbar_button_width,
+  $height: $srp_scrollbar_button_height,
+  $background: $srp_scrollbar_button_background
+) {
+  &::-webkit-scrollbar-button {
+    width: $width;
+    height: $height;
+    background: $background;
+  }
+}
+
+@mixin srp_scrollbar_thumb(
+  $background: $srp_scrollbar_thumb_background,
+  $background_hover: $srp_scrollbar_thumb_background_hover,
+  $background_active: $srp_scrollbar_thumb_background_active,
+  $border: $srp_scrollbar_thumb_border,
+  $border-radius: $srp_scrollbar_thumb_border-radius
+) {
+  &::-webkit-scrollbar-thumb {
+    background: $background;
+    border: $border;
+    border-radius: $border-radius;
+    &:hover {
+      background: $background_hover;
+    }
+    &:active {
+      background: $background_active;
+    }
+  }
+}
+
+@mixin srp_scrollbar_track(
+  $background: $srp_scrollbar_track_background,
+  $background_hover: $srp_scrollbar_track_background_hover,
+  $background_active: $srp_scrollbar_track_background_active,
+  $border: $srp_scrollbar_track_border,
+  $border-radius: $srp_scrollbar_track_border-radius
+) {
+  &::-webkit-scrollbar-track {
+    background: $background;
+    border: $border;
+    border-radius: $border-radius;
+    &:hover {
+      background: $background_hover;
+    }
+    &:active {
+      background: $background_active;
+    }
+  }
+}
+
+@mixin srp_scrollbar_corner($background: $srp_scrollbar_corner_background) {
+  &::-webkit-scrollbar-corner {
+    background: $background;
+  }
+}

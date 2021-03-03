@@ -1,0 +1,7 @@
+//?? 	Defines a section in a document
+@mixin srp_appearance_reset_span() {
+}
+
+@if ($srp_appearance_reset_span) {
+  @include srp_appearance_reset_span();
+}

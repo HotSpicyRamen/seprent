@@ -1,0 +1,38 @@
+@if ($srp_module_box) {
+  //** Single container class with breakpoint max-widths
+  .box,
+  //** 100% wide container at all breakpoints
+  .box-filler {
+    @include srp_box_initialize();
+  }
+
+  @each $box-name, $box-max-width in $srp_box_max-widths {
+    .box-#{$box-name} {
+      @extend .box-filler;
+    }
+
+    @include srp-media-min-width($box-name, $srp_media_breakpoints) {
+      %responsive-box-#{$box-name} {
+        max-width: $box-max-width;
+      }
+
+      //** Extend each breakpoint which is smaller or equal to the current breakpoint
+      $extend-breakpoint: true;
+
+      @each $media-name, $media-width in $srp_media_breakpoints {
+        @if ($extend-breakpoint) {
+          $postfix: srp-breakpoint-postfix($media-name, $srp_media_breakpoints);
+
+          .box#{$postfix} {
+            @extend %responsive-box-#{$box-name};
+          }
+
+          //** Once the current breakpoint is reached, stop extending
+          @if ($box-name == $media-name) {
+            $extend-breakpoint: false;
+          }
+        }
+      }
+    }
+  }
+}

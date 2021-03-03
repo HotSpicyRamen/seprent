@@ -1,0 +1,16 @@
+@mixin srp-set-scope($selector) {
+  $srp_onclick_scope: #{$selector} !global;
+  @content;
+}
+
+@mixin srp-set-click($selector) {
+  #{$selector}:checked ~ #{$srp_onclick_scope} {
+    @content;
+  }
+}
+
+@mixin srp-set-focus($selector) {
+  #{$selector}:focus {
+    @content;
+  }
+}

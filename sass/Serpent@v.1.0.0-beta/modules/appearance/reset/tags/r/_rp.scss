@@ -1,0 +1,7 @@
+//?? 	Defines what to show in browsers that do not support ruby annotations
+@mixin srp_appearance_reset_rp() {
+}
+
+@if ($srp_appearance_reset_rp) {
+  @include srp_appearance_reset_rp();
+}

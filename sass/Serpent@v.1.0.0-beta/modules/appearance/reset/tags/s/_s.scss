@@ -1,0 +1,7 @@
+//?? 	Defines text that is no longer correct
+@mixin srp_appearance_reset_s() {
+}
+
+@if ($srp_appearance_reset_s) {
+  @include srp_appearance_reset_s();
+}

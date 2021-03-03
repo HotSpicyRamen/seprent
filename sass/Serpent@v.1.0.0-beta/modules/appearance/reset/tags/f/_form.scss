@@ -1,0 +1,7 @@
+//?? 	Defines an HTML form for user input
+@mixin srp_appearance_reset_form() {
+}
+
+@if ($srp_appearance_reset_form) {
+  @include srp_appearance_reset_form();
+}

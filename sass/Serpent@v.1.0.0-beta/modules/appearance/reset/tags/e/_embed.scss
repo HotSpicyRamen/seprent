@@ -1,0 +1,7 @@
+//?? 	Defines a container for an external application
+@mixin srp_appearance_reset_embed() {
+}
+
+@if ($srp_appearance_reset_embed) {
+  @include srp_appearance_reset_embed();
+}

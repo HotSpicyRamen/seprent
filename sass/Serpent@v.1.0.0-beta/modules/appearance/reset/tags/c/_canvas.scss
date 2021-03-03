@@ -1,0 +1,7 @@
+//?? Used to draw graphics, on the fly, via scripting (usually JavaScript)
+@mixin srp_appearance_reset_canvas() {
+}
+
+@if ($srp_appearance_reset_canvas) {
+  @include srp_appearance_reset_canvas();
+}

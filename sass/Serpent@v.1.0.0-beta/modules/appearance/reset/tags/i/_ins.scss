@@ -1,0 +1,7 @@
+//?? 	Defines a text that has been inserted into a document
+@mixin srp_appearance_reset_ins() {
+}
+
+@if ($srp_appearance_reset_ins) {
+  @include srp_appearance_reset_ins();
+}

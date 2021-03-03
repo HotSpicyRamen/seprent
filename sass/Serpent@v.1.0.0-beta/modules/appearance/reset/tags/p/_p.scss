@@ -1,0 +1,7 @@
+//?? 	Defines a paragraph
+@mixin srp_appearance_reset_p() {
+}
+
+@if ($srp_appearance_reset_p) {
+  @include srp_appearance_reset_p();
+}

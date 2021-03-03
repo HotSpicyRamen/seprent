@@ -1,0 +1,7 @@
+//?? 	Defines HTML headings
+@mixin srp_appearance_reset_h() {
+}
+
+@if ($srp_appearance_reset_h) {
+  @include srp_appearance_reset_h();
+}

@@ -1,0 +1,7 @@
+//?? 	Defines a caption for a <figure> element
+@mixin srp_appearance_reset_figcaption() {
+}
+
+@if ($srp_appearance_reset_figcaption) {
+  @include srp_appearance_reset_figcaption();
+}

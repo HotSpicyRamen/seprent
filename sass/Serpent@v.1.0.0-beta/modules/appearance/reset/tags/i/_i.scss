@@ -1,0 +1,7 @@
+//?? 	Defines a part of text in an alternate voice or mood
+@mixin srp_appearance_reset_i() {
+}
+
+@if ($srp_appearance_reset_i) {
+  @include srp_appearance_reset_i();
+}

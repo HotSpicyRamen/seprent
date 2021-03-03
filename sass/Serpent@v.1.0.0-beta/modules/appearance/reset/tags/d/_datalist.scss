@@ -1,0 +1,7 @@
+//?? Specifies a list of pre-defined options for input controls
+@mixin srp_appearance_reset_datalist() {
+}
+
+@if ($srp_appearance_reset_datalist) {
+  @include srp_appearance_reset_datalist();
+}

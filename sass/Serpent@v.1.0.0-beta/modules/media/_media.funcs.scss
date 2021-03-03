@@ -1,0 +1,101 @@
+//!!!!  Breakpoint viewport sizes and media queries.
+//????  $breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)
+
+//!!  @function srp-breakpoint-next($name, $breakpoints)
+//??  Name of the next breakpoint, or null for the last breakpoint.
+//>>  srp-breakpoint-next(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === sm
+//>>  srp-breakpoint-next(xxl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === null
+@function srp-breakpoint-next($name, $breakpoints) {
+  //=>  $keys === (xs, sm, md, lg, xl, xxl)
+  $keys: map-keys($breakpoints);
+
+  //=>  Let $name === xs, then $position === 1
+  //=>  Let $name === xxl, then $position === 6
+  $position: index($keys, $name);
+
+  //=>  If $position === null, then $position not found
+  @if not $position {
+    @error "Breakpoint [ #{$name} ] not found in [ #{$breakpoints} ]";
+  }
+
+  @return if($position < length($keys), nth($keys, $position + 1), null);
+}
+
+//!!  @function srp-breakpoint-min($name, $breakpoints)
+//??  Minimum breakpoint width. Null for the smallest (first) breakpoint.
+//>>  srp-breakpoint-min(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === null
+//>>  srp-breakpoint-min(xxl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === 1400px
+@function srp-breakpoint-min($name, $breakpoints) {
+  //=>  Let $name === xs, then $value === 0
+  //=>  Let $name === xxl, then $value === 1400px
+  $value: map-get($breakpoints, $name);
+
+  @return if($value != 0, $value, null);
+}
+
+//!!  @function srp-breakpoint-max($name, $breakpoints)
+//??  Maximum breakpoint width. Null for the smallest (first) breakpoint.
+//**  Breakpoint value (reduced by 0.02px because of Safari bug).
+//>>  srp-breakpoint-max(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === null
+//>>  srp-breakpoint-max(xxl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === 1399.98px
+@function srp-breakpoint-max($name, $breakpoints) {
+  //=>  Let $name === xs, then $value === 0
+  //=>  Let $name === xxl, then $value === 1400px
+  $value: map-get($breakpoints, $name);
+
+  @return if($value and $value > 0, $value - 0.02, null);
+}
+
+//!!  @function srp-breakpoint-limits($name, $breakpoints)
+//??  Breakpoint (from, to) width values. (from, null) for the last breakpoint.
+//>>  srp-breakpoint-limits(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === (0, 576px)
+//>>  srp-breakpoint-limits(xxl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === (1400px, null)
+@function srp-breakpoint-limits($name, $breakpoints) {
+  //=>  Let $name === xs, then $min === 0
+  //=>  Let $name === xxl, then $min === 1400px
+  $min: map-get($breakpoints, $name);
+
+  //=>  Let $name === xs, then $max === 576px
+  //=>  Let $name === xxl, then $max === null
+  $max: map-get($breakpoints, srp-breakpoint-next($name, $breakpoints));
+
+  //=>  $keys === (xs, sm, md, lg, xl, xxl)
+  $keys: map-keys($breakpoints);
+
+  //=>  Let $name === xxl, then $position === 6
+  $position: index($keys, $name);
+
+  @return if($position < length($breakpoints), ($min, $max), ($min, null));
+}
+
+//!!  @function srp-breakpoint-fix($name, $breakpoints)
+//??  Returns breakpoint name. Empty string if smallest (first) breakpoint.
+//>>  srp-breakpoint-fix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === ""
+//>>  srp-breakpoint-fix(xxl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === "xxl"
+@function srp-breakpoint-fix($name, $breakpoints) {
+  @return if(srp-breakpoint-min($name, $breakpoints) == null, "", "#{$name}");
+}
+
+//!!  @function srp-breakpoint-prefix($name, $breakpoints)
+//??  Returns breakpoint name with a dash in back. Empty string if smallest (first) breakpoint.
+//>>  srp-breakpoint-prefix(xs, (xs: 0, sm: 576px, md: 768px, ...)) === ""
+//>>  srp-breakpoint-prefix(xxl, (xs: 0, sm: 576px, md: 768px, ...)) === "xxl-"
+@function srp-breakpoint-prefix($name, $breakpoints) {
+  @return if(srp-breakpoint-min($name, $breakpoints) == null, "", "#{$name}-");
+}
+
+//!!  @function srp-breakpoint-postfix($name, $breakpoints)
+//??  Returns breakpoint name with a dash in front. Empty string if smallest (first) breakpoint.
+//>>  srp-breakpoint-postfix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === ""
+//>>  srp-breakpoint-postfix(xxl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === "-xxl"
+@function srp-breakpoint-postfix($name, $breakpoints) {
+  @return if(srp-breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+}
+
+//!!  @function srp-breakpoint-infix($name, $breakpoints)
+//??  Returns the name with a dash around it. Empty string if smallest (first) breakpoint.
+//>>  srp-breakpoint-infix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === ""
+//>>  srp-breakpoint-infix(xxl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === "-xxl-"
+@function srp-breakpoint-infix($name, $breakpoints) {
+  @return if(srp-breakpoint-min($name, $breakpoints) == null, "", "-#{$name}-");
+}

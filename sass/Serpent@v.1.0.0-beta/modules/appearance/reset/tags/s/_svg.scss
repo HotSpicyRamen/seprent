@@ -1,0 +1,7 @@
+//?? 	Defines a container for SVG graphics
+@mixin srp_appearance_reset_svg() {
+}
+
+@if ($srp_appearance_reset_svg) {
+  @include srp_appearance_reset_svg();
+}

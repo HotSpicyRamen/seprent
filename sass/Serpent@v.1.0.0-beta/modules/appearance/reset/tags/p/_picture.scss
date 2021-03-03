@@ -1,0 +1,7 @@
+//?? 	Defines a container for multiple image resources
+@mixin srp_appearance_reset_picture() {
+}
+
+@if ($srp_appearance_reset_picture) {
+  @include srp_appearance_reset_picture();
+}

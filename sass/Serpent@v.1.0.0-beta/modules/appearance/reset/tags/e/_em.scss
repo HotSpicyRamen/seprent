@@ -1,0 +1,7 @@
+//?? Defines emphasized text
+@mixin srp_appearance_reset_em() {
+}
+
+@if ($srp_appearance_reset_em) {
+  @include srp_appearance_reset_em();
+}

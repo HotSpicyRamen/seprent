@@ -1,0 +1,7 @@
+//?? 	Defines subscripted text
+@mixin srp_appearance_reset_sub() {
+}
+
+@if ($srp_appearance_reset_sub) {
+  @include srp_appearance_reset_sub();
+}

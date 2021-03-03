@@ -1,0 +1,7 @@
+//?? 	Specifies the main content of a document
+@mixin srp_appearance_reset_main() {
+}
+
+@if ($srp_appearance_reset_main) {
+  @include srp_appearance_reset_main();
+}

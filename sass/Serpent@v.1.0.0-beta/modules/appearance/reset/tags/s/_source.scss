@@ -1,0 +1,7 @@
+//?? 	Defines multiple media resources for media elements (<video> and <audio>)
+@mixin srp_appearance_reset_source() {
+}
+
+@if ($srp_appearance_reset_source) {
+  @include srp_appearance_reset_source();
+}

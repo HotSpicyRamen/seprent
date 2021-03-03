@@ -1,0 +1,7 @@
+//?? Specifies column properties for each column within a <colgroup> element
+@mixin srp_appearance_reset_col() {
+}
+
+@if ($srp_appearance_reset_col) {
+  @include srp_appearance_reset_col();
+}

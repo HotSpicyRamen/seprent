@@ -1,0 +1,88 @@
+@function srp-parse-util-class($object, $fallback) {
+  $prop: map-get($object, property);
+  $base: map-get($object, property-base);
+  $class: if($base, $base, $prop);
+  @return if($class, $class, $fallback);
+}
+
+@function srp-parse-util-class-modes($object) {
+  @return srp-parse-util-mode(
+    map-get($object, values-mode),
+    map-get($object, values)
+  );
+}
+
+@function srp-parse-util-mode($mode, $array) {
+  @if not $mode or $mode == "none" {
+    @return $array;
+  }
+
+  @if $mode == "abbr" {
+    @return srp-map-util-to-abbr($array);
+  } @else if $mode == "rest" {
+    @return srp-map-util-to-rest($array);
+  } @else if $mode == "ordered" {
+    @return srp-map-util-to-order($array);
+  } @else {
+    @error "Such mode [ #{$mode} ] does not exists.";
+  }
+}
+
+@function srp-map-util-to-abbr($array) {
+  $transformed: ();
+
+  @each $item in $array {
+    $words: srp-split($item, "-");
+    $abbr: "";
+
+    @each $word in $words {
+      $char: str-slice($word, 1, 1);
+      $abbr: str-insert($abbr, $char, -1);
+    }
+
+    $transformed: append($transformed, #{$abbr});
+  }
+
+  @return $transformed;
+}
+
+@function srp-map-util-to-rest($array) {
+  $transformed: ();
+
+  @each $item in $array {
+    $words: srp-split($item, "-");
+    $words-length: length($words);
+    $rest: $item;
+
+    @if ($words-length > 1) {
+      $rest: "";
+      @for $index from 2 through $words-length {
+        $word: nth($words, $index);
+        $piece: if($index == $words-length, "#{$word}", "#{$word}-");
+        $rest: str-insert($rest, $piece, -1);
+      }
+    }
+
+    $transformed: append($transformed, #{$rest});
+  }
+
+  @return $transformed;
+}
+
+@function srp-map-util-to-order($array) {
+  $transformed: ();
+
+  @each $item in $array {
+    $index: index($array, $item);
+
+    @if ($index == 1) {
+      $transformed: srp-set-map-key($transformed, first, $item);
+    } @else if ($index == length($array)) {
+      $transformed: srp-set-map-key($transformed, last, $item);
+    } @else {
+      $transformed: srp-set-map-key($transformed, $index - 1, $item);
+    }
+  }
+
+  @return $transformed;
+}

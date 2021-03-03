@@ -1,0 +1,18 @@
+@mixin srp_test_unit_onclick() {
+  @include srp-set-scope("#app") {
+    @include srp-set-click("#toggler-checkbox") {
+      background: lightcoral;
+    }
+    @include srp-set-click("#toggler-checkbox-2") {
+      background: lightseagreen;
+      #toggler-tabindex {
+        display: none;
+      }
+    }
+    @include srp-set-focus("#toggler-tabindex") {
+      background-color: lightgreen;
+    }
+  }
+
+  @debug $srp_onclick_scope;
+}

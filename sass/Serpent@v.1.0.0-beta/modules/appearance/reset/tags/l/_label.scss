@@ -1,0 +1,7 @@
+//?? 	Defines a label for an <input> element
+@mixin srp_appearance_reset_label() {
+}
+
+@if ($srp_appearance_reset_label) {
+  @include srp_appearance_reset_label();
+}

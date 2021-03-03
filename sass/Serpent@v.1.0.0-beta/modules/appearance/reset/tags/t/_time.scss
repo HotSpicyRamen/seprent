@@ -1,0 +1,7 @@
+//?? 	Defines a specific time (or datetime)
+@mixin srp_appearance_reset_time() {
+}
+
+@if ($srp_appearance_reset_time) {
+  @include srp_appearance_reset_time();
+}

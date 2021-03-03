@@ -1,0 +1,13 @@
+{
+  "folders": [
+	{
+		"path": "."
+	},
+	{
+		"path": "..\\..\\#github-repos\\Bootstrap@v.5.0.0-alpha2"
+	}
+],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "seprent"
+	}
+}

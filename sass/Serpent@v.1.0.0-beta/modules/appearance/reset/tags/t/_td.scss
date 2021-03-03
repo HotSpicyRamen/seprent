@@ -1,0 +1,7 @@
+//?? 	Defines a cell in a table
+@mixin srp_appearance_reset_td() {
+}
+
+@if ($srp_appearance_reset_td) {
+  @include srp_appearance_reset_td();
+}
