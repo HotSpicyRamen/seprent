@@ -1,14 +1,11 @@
-//???? Build: List of modules, that must be compiled or not compiled depends it's true or not.
-@import "./build";
-
 //???? Common: Sass implementation of Javascript functions, temporary classes etc.
-@import "./common/index";
+@import "./common/all";
 
 //???? Modules: Basic functionality: layouts, scaffolds, utils etc.
-@import "./modules/index";
+@import "./modules/all";
 
 //???? Components: Basic components: forms, navigation, cards etc.
-@import "./components/index";
+@import "./components/all";
 
 //???? Tests: Ideas, that must be implemented. Modules and components, that must be tested.
-@import "./tests/index";
+@import "./tests/all";

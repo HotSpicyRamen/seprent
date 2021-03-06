@@ -17,5 +17,9 @@
     "css-utilities"
   ],
   "author": "Roman N.",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "node-sass": "^5.0.0",
+    "nodemon": "^2.0.7"
+  }
 }

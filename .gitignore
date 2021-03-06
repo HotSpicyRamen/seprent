@@ -1,6 +1,8 @@
 # Developer Folders
 docs/
 html/
+compile.js
+workspace.code-workspace
 
 # Logs
 logs
