@@ -2,6 +2,7 @@
 docs/
 html/
 compile.js
+replace.js
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
