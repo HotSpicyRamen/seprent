@@ -2,7 +2,7 @@
 docs/
 html/
 compile.js
-workspace.code-workspace
+.vscode/
 
 # Logs
 logs
