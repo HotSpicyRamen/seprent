@@ -1,5 +1,5 @@
 {
-  "name": "seprent",
+  "name": "serpent",
   "version": "1.0.0",
   "description": "Another compact and customizable CSS framework for fast UI markup.",
   "main": "compile.js",

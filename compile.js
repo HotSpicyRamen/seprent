@@ -2,6 +2,9 @@ const sass = require("node-sass");
 const path = require("path");
 const fs = require("fs");
 
+//TODO: Make a config file, for different modes of compiling.
+const config = {};
+
 sass.render(
   {
     file: "./scss/root.scss",
