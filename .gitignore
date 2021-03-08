@@ -1,13 +1,7 @@
 # Custom Ignores: Developer Folders
+build/
 docs/
 html/
-compile.js
-replace.js
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
 *.code-workspace
 
 # Local History for Visual Studio Code
@@ -97,7 +91,6 @@ out
 
 # Nuxt.js build / generate output
 .nuxt
-dist
 
 # Gatsby files
 .cache/

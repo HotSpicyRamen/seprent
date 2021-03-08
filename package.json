@@ -6,8 +6,8 @@
   "private": true,
   "scripts": {
     "start": "npm run start:dev",
-    "start:dev": "nodemon compile.js",
-    "start:prod": "node compile.js"
+    "start:dev": "nodemon ./build/compile.ts",
+    "start:prod": "node ./build/compile.ts"
   },
   "keywords": [
     "css",
@@ -19,7 +19,9 @@
   "author": "Roman N.",
   "license": "MIT",
   "devDependencies": {
+    "@types/node-sass": "^4.11.1",
     "node-sass": "^5.0.0",
-    "nodemon": "^2.0.7"
+    "nodemon": "^2.0.7",
+    "dotenv": "^8.2.0"
   }
 }
