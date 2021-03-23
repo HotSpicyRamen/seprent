@@ -1,4 +1,6 @@
-@if ($srp_component_scrollbar) {
+//$srp_component_scrollbar
+
+@if (true) {
   .scrollbar,
   .swipe {
     overflow: auto;

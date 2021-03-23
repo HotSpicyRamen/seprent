@@ -1,0 +1,107 @@
+.scrollbar,
+.swipe {
+  overflow: auto;
+}
+
+.scrollbar-x,
+.swipe-x {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.scrollbar-y,
+.swipe-y {
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.scrollbar,
+.scrollbar-x,
+.scrollbar-y {
+  white-space: nowrap;
+}
+
+.scrollbar::-webkit-scrollbar,
+.scrollbar-x::-webkit-scrollbar,
+.scrollbar-y::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+  background: #12232e;
+}
+
+.scrollbar::-webkit-scrollbar-button,
+.scrollbar-x::-webkit-scrollbar-button,
+.scrollbar-y::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+  background: transparent;
+}
+
+.scrollbar::-webkit-scrollbar-thumb,
+.scrollbar-x::-webkit-scrollbar-thumb,
+.scrollbar-y::-webkit-scrollbar-thumb {
+  background: #007cc7;
+  border: 0 solid transparent;
+  border-radius: 10px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:hover,
+.scrollbar-x::-webkit-scrollbar-thumb:hover,
+.scrollbar-y::-webkit-scrollbar-thumb:hover {
+  cursor: pointer;
+  background: #0072b8;
+}
+
+.scrollbar::-webkit-scrollbar-thumb:active,
+.scrollbar-x::-webkit-scrollbar-thumb:active,
+.scrollbar-y::-webkit-scrollbar-thumb:active {
+  cursor: pointer;
+  background: #0069a8;
+}
+
+.scrollbar::-webkit-scrollbar-track,
+.scrollbar-x::-webkit-scrollbar-track,
+.scrollbar-y::-webkit-scrollbar-track {
+  background: #203647;
+  border: 0 solid transparent;
+  border-radius: 0;
+}
+
+.scrollbar::-webkit-scrollbar-track:hover,
+.scrollbar-x::-webkit-scrollbar-track:hover,
+.scrollbar-y::-webkit-scrollbar-track:hover {
+  cursor: pointer;
+  background: #203647;
+}
+
+.scrollbar::-webkit-scrollbar-track:active,
+.scrollbar-x::-webkit-scrollbar-track:active,
+.scrollbar-y::-webkit-scrollbar-track:active {
+  cursor: pointer;
+  background: #203647;
+}
+
+.scrollbar::-webkit-scrollbar-corner,
+.scrollbar-x::-webkit-scrollbar-corner,
+.scrollbar-y::-webkit-scrollbar-corner {
+  background: transparent;
+}
+
+.swipe,
+.swipe-x,
+.swipe-y {
+  white-space: nowrap;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+  scrollbar-color: transparent;
+}
+
+.swipe::-webkit-scrollbar,
+.swipe-x::-webkit-scrollbar,
+.swipe-y::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  background: transparent;
+}
+
+/*# sourceMappingURL=scrollbar.css.map */
