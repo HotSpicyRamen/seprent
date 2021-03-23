@@ -1,0 +1,14 @@
+$srp-palette: (
+  dark: #12232e,
+  normal: #007cc7,
+  light: #4da8da,
+  dark-shade: #203647,
+  light-shade: #eefbfb,
+) !default;
+
+$srp-palette-dark: map-get($srp-palette, 'dark');
+$srp-palette-normal: map-get($srp-palette, 'normal');
+$srp-palette-light: map-get($srp-palette, 'light');
+
+$srp-palette-dark-shade: map-get($srp-palette, 'dark-shade');
+$srp-palette-light-shade: map-get($srp-palette, 'light-shade');

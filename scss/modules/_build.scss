@@ -1,12 +1,11 @@
-$srp_module_normalize: true; //!! OK
-$srp_module_default: true; //!! OK
-$srp_module_appearance: true; //TODO
-$srp_module_scrollbar: true; //!! OK
+$srp_module_normalize: true !default;
+$srp_module_default: true !default;
+$srp_module_appearance: true !default;
 
-$srp_module_box: true; //!! OK
-$srp_module_flex-layout: true; //!! OK
+$srp_module_box: true !default;
+$srp_module_flex-layout: true !default;
 
-$srp_module_gap: true; //!! OK
-$srp_module_utilities: true; //!! OK
+$srp_module_gap: true !default;
+$srp_module_utilities: true !default;
 
-$srp_module_onclick: true; //TODO
+$srp_module_onclick: true !default;

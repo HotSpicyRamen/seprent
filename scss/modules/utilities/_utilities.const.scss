@@ -1,89 +1,89 @@
 $srp_utilities_map: (
-  "display": (
+  'display': (
     media: true,
     property: display,
     property-base: d,
     values: none block inline inline-block flex inline-flex,
     values-mode: none,
   ),
-  "flex-direction": (
+  'flex-direction': (
     media: true,
     property: flex-direction,
     property-base: flex,
     values: row column row-reverse column-reverse,
     values-mode: none,
   ),
-  "flex-wrap": (
+  'flex-wrap': (
     media: true,
     property: flex-wrap,
     property-base: flex,
     values: nowrap wrap wrap-reverse,
     values-mode: none,
   ),
-  "flex-grow": (
+  'flex-grow': (
     media: true,
     property: flex-grow,
     property-base: flex-grow,
     values: 0 1,
     values-mode: none,
   ),
-  "flex-shrink": (
+  'flex-shrink': (
     media: true,
     property: flex-shrink,
     property-base: flex-shrink,
     values: 0 1,
     values-mode: none,
   ),
-  "justify-content": (
+  'justify-content': (
     media: true,
     property: justify-content,
     property-base: jc,
     values: flex-start flex-end center space-between space-around space-evenly,
     values-mode: rest,
   ),
-  "align-items": (
+  'align-items': (
     media: true,
     property: align-items,
     property-base: ai,
     values: flex-start flex-end center baseline stretch,
     values-mode: rest,
   ),
-  "align-content": (
+  'align-content': (
     media: true,
     property: align-content,
     property-base: ac,
     values: flex-start flex-end center space-between space-around stretch,
     values-mode: rest,
   ),
-  "align-self": (
+  'align-self': (
     media: true,
     property: align-self,
     property-base: as,
     values: auto flex-start flex-end center baseline stretch,
     values-mode: rest,
   ),
-  "order": (
+  'order': (
     media: true,
     property: order,
     property-base: order,
     values: -1 0 1 2 3,
     values-mode: ordered,
   ),
-  "font-weight": (
+  'font-weight': (
     media: false,
     property: font-weight,
     property-base: text,
     values: normal bold lighter bolder,
     values-mode: none,
   ),
-  "text-transform": (
+  'text-transform': (
     media: false,
     property: text-transform,
     property-base: text,
     values: lowercase uppercase capitalize,
     values-mode: none,
   ),
-  "text-align": (
+  'text-align': (
     media: true,
     property: text-align,
     property-base: text,

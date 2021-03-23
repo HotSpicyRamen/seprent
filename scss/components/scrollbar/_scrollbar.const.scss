@@ -1,0 +1,21 @@
+$srp_scrollbar_width: 10px;
+$srp_scrollbar_height: 10px;
+$srp_scrollbar_background: $srp-palette-dark;
+
+$srp_scrollbar_button_width: 0;
+$srp_scrollbar_button_height: 0;
+$srp_scrollbar_button_background: transparent;
+
+$srp_scrollbar_thumb_background: $srp-palette-normal;
+$srp_scrollbar_thumb_background_hover: darken($srp-palette-normal, 3%);
+$srp_scrollbar_thumb_background_active: darken($srp-palette-normal, 6%);
+$srp_scrollbar_thumb_border: 0 solid transparent;
+$srp_scrollbar_thumb_border-radius: 10px;
+
+$srp_scrollbar_track_background: $srp-palette-dark-shade;
+$srp_scrollbar_track_background_hover: $srp-palette-dark-shade;
+$srp_scrollbar_track_background_active: $srp-palette-dark-shade;
+$srp_scrollbar_track_border: 0 solid transparent;
+$srp_scrollbar_track_border-radius: 0;
+
+$srp_scrollbar_corner_background: transparent;

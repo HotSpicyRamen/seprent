@@ -73,7 +73,7 @@
 //>>  srp-breakpoint-fix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === ""
 //>>  srp-breakpoint-fix(xxl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === "xxl"
 @function srp-breakpoint-fix($name, $breakpoints) {
-  @return if(srp-breakpoint-min($name, $breakpoints) == null, "", "#{$name}");
+  @return if(srp-breakpoint-min($name, $breakpoints) == null, '', '#{$name}');
 }
 
 //!!  @function srp-breakpoint-prefix($name, $breakpoints)
@@ -81,7 +81,7 @@
 //>>  srp-breakpoint-prefix(xs, (xs: 0, sm: 576px, md: 768px, ...)) === ""
 //>>  srp-breakpoint-prefix(xxl, (xs: 0, sm: 576px, md: 768px, ...)) === "xxl-"
 @function srp-breakpoint-prefix($name, $breakpoints) {
-  @return if(srp-breakpoint-min($name, $breakpoints) == null, "", "#{$name}-");
+  @return if(srp-breakpoint-min($name, $breakpoints) == null, '', '#{$name}-');
 }
 
 //!!  @function srp-breakpoint-postfix($name, $breakpoints)
@@ -89,7 +89,7 @@
 //>>  srp-breakpoint-postfix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === ""
 //>>  srp-breakpoint-postfix(xxl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === "-xxl"
 @function srp-breakpoint-postfix($name, $breakpoints) {
-  @return if(srp-breakpoint-min($name, $breakpoints) == null, "", "-#{$name}");
+  @return if(srp-breakpoint-min($name, $breakpoints) == null, '', '-#{$name}');
 }
 
 //!!  @function srp-breakpoint-infix($name, $breakpoints)
@@ -97,5 +97,5 @@
 //>>  srp-breakpoint-infix(xs, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === ""
 //>>  srp-breakpoint-infix(xxl, (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px, xxl: 1400px)) === "-xxl-"
 @function srp-breakpoint-infix($name, $breakpoints) {
-  @return if(srp-breakpoint-min($name, $breakpoints) == null, "", "-#{$name}-");
+  @return if(srp-breakpoint-min($name, $breakpoints) == null, '', '-#{$name}-');
 }

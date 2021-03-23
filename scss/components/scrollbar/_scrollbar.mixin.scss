@@ -45,10 +45,14 @@
     background: $background;
     border: $border;
     border-radius: $border-radius;
+
     &:hover {
+      cursor: pointer;
       background: $background_hover;
     }
+
     &:active {
+      cursor: pointer;
       background: $background_active;
     }
   }
@@ -65,10 +69,14 @@
     background: $background;
     border: $border;
     border-radius: $border-radius;
+
     &:hover {
+      cursor: pointer;
       background: $background_hover;
     }
+
     &:active {
+      cursor: pointer;
       background: $background_active;
     }
   }

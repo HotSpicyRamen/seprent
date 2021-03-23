@@ -1,9 +1,9 @@
 @function srp-is-map($variable) {
-  @return type-of($variable) == "map";
+  @return type-of($variable) == 'map';
 }
 
 @function srp-trim($string) {
-  $whitespace: " ";
+  $whitespace: ' ';
 
   //** Trim Start
   @if (str-slice($string, 1, 1) == $whitespace) {

@@ -38,7 +38,7 @@
 @mixin srp_flex-layout_make-col-square() {
   display: flex;
   &::before {
-    content: "";
+    content: '';
     padding-top: 100%;
   }
 }
@@ -105,7 +105,7 @@
           //** [$columns - 1] (because offset-12 on width of entire row isn't possible)
           @for $step from 0 through ($columns - 1) {
             //** [$fix !== "" && $step !== 0] (offset-0 is useless)
-            @if not($postfix == "" and $step == 0) {
+            @if not($postfix == '' and $step == 0) {
               .offset#{$postfix}-#{$step} {
                 @include srp_flex-layout_make-col-offset($step, $columns);
               }

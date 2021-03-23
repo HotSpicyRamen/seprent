@@ -31,7 +31,7 @@
           @include srp_utilities_create($util-data, $postfix);
         } @else {
           //** If util without media and empty postfix.
-          @if $postfix == "" {
+          @if $postfix == '' {
             @include srp_utilities_create($util-data, $postfix);
           }
         }

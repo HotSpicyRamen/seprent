@@ -22,15 +22,15 @@
     $limits: srp-breakpoint-limits($name, $breakpoints);
     $lower: nth($limits, 1);
     $upper: nth($limits, 2);
-    $range: if($upper, "#{$lower} - #{$upper}", "> #{$lower}");
+    $range: if($upper, '#{$lower} - #{$upper}', '> #{$lower}');
 
     @include srp-media-min-width($name, $breakpoints) {
       .srp-breakpoint-debug {
         &::before {
-          content: "Breakpoint: #{$name}";
+          content: 'Breakpoint: #{$name}';
         }
         &::after {
-          content: "Range: #{$range}";
+          content: 'Range: #{$range}';
         }
       }
     }
