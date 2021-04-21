@@ -2,7 +2,6 @@
 build/
 docs/
 html/
-scss/
 
 # Visual Studio Code
 .vscode/*
